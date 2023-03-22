@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Abhay Patel</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="https://convertico.com/favicon/converted/1679462985.6662/_previmg.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://convertico.com/favicon/converted/1679462985.6662/_previmg.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://convertico.com/favicon/converted/1679462985.6662/_previmg.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://convertico.com/favicon/converted/1679462985.6662/_previmg.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://convertico.com/favicon/converted/1679462985.6662/_previmg.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://convertico.com/favicon/converted/1679462985.6662/_previmg.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://convertico.com/favicon/converted/1679462985.6662/_previmg.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://convertico.com/favicon/converted/1679462985.6662/_previmg.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://convertico.com/favicon/converted/1679462985.6662/_previmg.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="https://convertico.com/favicon/converted/1679462985.6662/_previmg.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://convertico.com/favicon/converted/1679462985.6662/_previmg.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://convertico.com/favicon/converted/1679462985.6662/_previmg.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://convertico.com/favicon/converted/1679462985.6662/_previmg.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            background: #1f242d;
+        }
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        .logo{
+            font-size: 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: default;
+            opacity: 0;
+            animation: slideRight 1s ease forwards;
+        }
+        .navbar a{
+            display: inline-block;
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            transition: 0.5s;
+            opacity: 0;
+            animation: slideTop 0.5s ease forwards;
+            animation-delay: calc(.2s * var(--i));
+        }
+        .navbar a:hover, .navbar .active{
+            color: #0ef;
+        }
+        .home{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 30px;
+        }
+        
+        .home-img img{
+            height: 50vh;
+            max-width: 450px;
+            object-fit: contain;
+            margin-right: 40px;
+            opacity: 0;
+            border-radius: 70%;
+            animation: zoomIn 0.5s ease forwards, floatImage 4s ease-in-out infinite;
+            animation-delay: 2s,3s;
+            box-shadow: 0 0 20px #0ef;
+        }
+        .home-content{
+            max-width: 600px;
+            margin-left: 30px;
+        }
+        .home-content h3{
+            font-size: 32px;
+            font-weight: 700;
+            opacity: 0;
+            animation: slideBottom 0.5s ease forwards;
+            animation-delay: .7s;
+        }
+        .home-content h3:nth-last-of-type(2){
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: slideTop 0.5s ease forwards;
+            animation-delay: 1s;
+        }
+        .home-content h3 span{
+            color: #0ef;
+        }
+        .home-content h1{
+            font-size: 56px;
+            font-weight: 700;
+            margin: -3px 0px;
+            opacity: 0;
+            animation: slideRight 0.5s ease forwards;
+            animation-delay: .7s;
+        }
+        .home-content p{
+            font-size: 16px;
+            opacity: 0;
+            animation: slideLeft 0.5s ease forwards;
+            animation-delay: 1s;
+        
+        }
+        .social-media a i{
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border-radius: 50%;
+            font-size: 20px;
+            border: 2px solid #0ef;
+            color: #0ef;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            animation: slideLeft 0.5s ease forwards;
+            animation-delay: calc(.2s * var(--i));
+            margin-top: 15px;
+        
+        }
+        .social-media a{
+            text-decoration: none;
+            border-radius: 40%;
+            font-size: 20px;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 15px 0;
+            opacity: 0;
+            animation: slideLeft 0.5s ease forwards;
+            animation-delay: calc(.2s * var(--i));
+        
+        }
+        .social-media a i:hover{
+            background: #0ef;
+            color: #1f242d;
+            box-shadow: 0 0 20px #0ef;
+        }
+        .btn{
+            display: inline-block;
+            padding: 12px 48px;
+            margin-top: 25px;
+            background: #0ef;
+            border-radius: 40px;
+            box-shadow: 0 0 10px #0ef;
+            color: #1f242d;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-weight: 600;
+            opacity: 0;
+            animation: slideTop 0.5s ease forwards;
+            animation-delay: 2s;
+        }
+        /*key frames*/
+        @keyframes slideRight{
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(-10px);
+                opacity: 1;
+            }
+        }
+        @keyframes slideTop{
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideBottom{
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideLeft{
+            0% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes zoomIn{
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        @keyframes floatImage{
+            0%{
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(-24px);
+            }
+            100%{
+                transform: translateY(0);
+            }
+        }
+        /*Media query*/
+        @media only screen and (min-width : 320px) {
+            .header{
+                background-color: #1f242d;
+            }
+            .navbar a{
+                display: flex;
+            }
+            .home{
+                margin-top: 300px;
+                text-align: center;
+            }
+            .home-img img{
+                display: inline-block;
+                height: 200px;
+                width: 200px;
+            }
+
+
+        }
+        
+        </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">ABHAY PATEL</a>
+        <nav class="navbar">
+            <a href="#" style="--i:1;" class="active">Home</a>
+            <a href="#" style="--i:2;">About</a>
+            <a href="#" style="--i:3;">Skills</a>
+            <a href="#" style="--i:4;">Portfolio</a>
+            <a href="#" style="--i:5;">Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1>Abhay Patel</h1>
+            <h3>And I am A <span class="multiple-text"></span></h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos at dignissimos eligendi similique illum! Ex cumque a repudiandae, ut animi beatae pariatur iure eos placeat, rem sequi voluptate aliquam esse.</p>
+            <div class="social-media">
+                <a href="#" style="--i:7;"><i class='bx bxl-facebook'></i></a>
+                <a href="#"style="--i:8;"><i class='bx bxl-youtube'></i></a>
+                <a href="#"style="--i:9;"><i class='bx bxl-instagram-alt' ></i></a>
+                <a href="#"style="--i:9;"><i class='bx bxl-linkedin' ></i></a>
+            </div>
+            <a href="#" class="btn">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="https://export-download.canva.com/4wkTc/DAFd5K4wkTc/5/0/0001-1288314485.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJHKNGJLC2J7OGJ6Q%2F20230322%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230322T023311Z&X-Amz-Expires=15723&X-Amz-Signature=c5523cb6bbb590d09a6204695a5767752ab890dbd7d059543a7a076396211567&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27Pastel%2520Creative%2520Feminine%2520Instagram%2520Profile%2520Picture.png&response-expires=Wed%2C%2022%20Mar%202023%2006%3A55%3A14%20GMT" alt="img">
+        </div>
+    </section>
+    <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+    <script>var typed = new Typed(".multiple-text",{
+        strings:["frontend Developer","Youtuber","Blogger"],
+        typeSpeed:100,
+        backSpeed:70,
+        backDelay:1000,
+        loop:true
+    })
+    </script>
+</body>
+</html>
